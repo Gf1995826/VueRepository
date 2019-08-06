@@ -1,6 +1,6 @@
 <template>
   <div class="hello">
-    <div class="form-group">
+    <!-- <div class="form-group">
       <label>Name:</label>
       <input type="text"
              class='form-control'
@@ -10,17 +10,23 @@
       <button type="button"
               class='btn btn-primary user-btn'
               name='sumbit'>Submit</button>
-    </div>
+    </div> -->
+    <Computed></Computed>
   </div>
 </template>
 
 <script>
+import Computed from './parctice/Computed'
+
 export default {
   name: 'HelloWorld',
   data () {
     return {
       msg: 'Welcome to Your Vue.js App'
     }
+  },
+  components: {
+    Computed
   }
 }
 </script>
