@@ -11,18 +11,52 @@
               class='btn btn-primary user-btn'
               name='sumbit'>Submit</button>
     </div> -->
+    <div>{{msg}}</div>
     <Computed></Computed>
+
+    <button @click="requestMsg"
+            title="I will send a requst and revice a msg">Click Me</button>
+    <div ref="successAlert"
+         class="alert alert-success">
+      <a class="close"
+         data-dismiss="alert"
+         @click.prevent="closeAlert('successAlert')">&times;</a>
+      <strong>成功！</strong>结果是成功的。
+    </div>
+    <div ref="warningAlert"
+         class="alert alert-warning">
+      <a class="close"
+         data-dismiss="alert"
+         @click.prevent="closeAlert('warningAlert')">&times;</a>
+      <strong>警告！</strong>结果是有错误的。
+    </div>
   </div>
 </template>
 
 <script>
+import axios from 'axios'
 import Computed from './parctice/Computed'
-
+import nodeconfig from '../assets/data/node'
 export default {
   name: 'HelloWorld',
   data () {
     return {
       msg: 'Welcome to Your Vue.js App'
+    }
+  },
+  methods: {
+    requestMsg () {
+      axios.get('fff/nms/console/node_config').then((res) => {
+        console.log(res)
+        this.msg = res.data
+      }).catch(err => {
+        console.log(err)
+        console.log(nodeconfig.nodeconfig)
+      })
+    },
+    closeAlert (alert) {
+      console.log(alert)
+      console.log(this.$refs[alert])
     }
   },
   components: {

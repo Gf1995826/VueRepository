@@ -5,8 +5,12 @@ import App from './App'
 import router from './router'
 import 'bootstrap3/dist/css/bootstrap.css'
 import 'bootstrap3/dist/js/bootstrap.js'
+import axios from 'axios'
+import VueAxios from 'vue-axios'
 Vue.config.productionTip = false
 
+// axios.defaults.baseURL = 'http://localhost:8888/'
+Vue.use(VueAxios, axios)
 /* eslint-disable no-new */
 new Vue({
   el: '#app',

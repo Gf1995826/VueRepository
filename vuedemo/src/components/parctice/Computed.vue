@@ -3,7 +3,8 @@
     <div class="form-inline">
       <input type="text"
              v-model="firstName"> and <input type="text"
-             v-model="lastName" /> = <input type="text"
+             v-model="lastName" /> = <input disabled
+             type="text"
              v-model="fullName" />
     </div>
   </div>

@@ -6,12 +6,19 @@ const path = require('path')
 
 module.exports = {
   dev: {
-
     // Paths
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
-    proxyTable: {},
-
+    proxyTable: {
+      // http://10.10.11.49:8080/nms/console/node_config
+      '/nms': {
+        target: 'http://10.10.11.49:8080',
+        changeOrigin: true // 接口跨域，则需要进行这个参数配置
+        // pathRewrite: {
+        //   '^/nms': '' // 如果接口本身没有/nms，则需要通过pathRewrite来重写
+        // }
+      }
+    },
     // Various Dev Server settings
     host: 'localhost', // can be overwritten by process.env.HOST
     port: 8080, // can be overwritten by process.env.PORT, if port is in use, a free one will be determined
@@ -50,7 +57,7 @@ module.exports = {
     // Paths
     assetsRoot: path.resolve(__dirname, '../dist'),
     assetsSubDirectory: 'static',
-    assetsPublicPath: '/',
+    assetsPublicPath: './',
 
     /**
      * Source Maps
