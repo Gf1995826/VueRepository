@@ -36,7 +36,8 @@
 <script>
 import axios from 'axios'
 import Computed from './parctice/Computed'
-import nodeconfig from '../assets/data/node'
+import node, { title1 as t1, title2 as t2 } from '../assets/data/node'
+
 export default {
   name: 'HelloWorld',
   data () {
@@ -46,12 +47,13 @@ export default {
   },
   methods: {
     requestMsg () {
-      axios.get('fff/nms/console/node_config').then((res) => {
+      axios.get('nms/console/node_config').then((res) => {
         console.log(res)
         this.msg = res.data
       }).catch(err => {
         console.log(err)
-        console.log(nodeconfig.nodeconfig)
+        console.log(t1, t2)
+        this.msg = node.allData
       })
     },
     closeAlert (alert) {

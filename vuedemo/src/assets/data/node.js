@@ -1,4 +1,4 @@
-var nodeconfig = {
+const AllData = {
   nodeInfo: { nodeId: '0005', protocol: 'http', port: 3344 },
   workDirs: {
     scriptDirs: 'D:/scriptDir',
@@ -35,4 +35,9 @@ var nodeconfig = {
     powerSupplySerialPort: 'COM2'
   }
 }
-nodeconfig.nodeInfo.port = 6666
+export var title1 = 'this is title1'
+export var title2 = 'this is title2'
+
+export default {
+  allData: AllData
+}
