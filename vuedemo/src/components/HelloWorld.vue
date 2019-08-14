@@ -78,4 +78,7 @@ export default {
     }
   }
 }
+.alert {
+  font-family: newFontFamily;
+}
 </style>
