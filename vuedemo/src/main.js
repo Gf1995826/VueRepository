@@ -7,6 +7,16 @@ import 'bootstrap3/dist/css/bootstrap.css'
 import 'bootstrap3/dist/js/bootstrap.js'
 import axios from 'axios'
 import VueAxios from 'vue-axios'
+
+// import all components from mint-ui
+import 'mint-ui/lib/style.css'
+import { Switch, Header, Button, Tabbar, TabItem } from 'mint-ui'
+Vue.component('my-header', Header)
+Vue.component('my-swith', Switch)
+Vue.component('my-button', Button)
+Vue.component('my-tabbar', Tabbar)
+Vue.component('my-tabitem', TabItem)
+
 Vue.config.productionTip = false
 
 // axios.defaults.baseURL = 'http://localhost:8888/'
