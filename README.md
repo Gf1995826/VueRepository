@@ -100,5 +100,13 @@ module: {
     ]
 }
 ```
+"axios": "^0.19.0",
+    "bootstrap3": "^3.3.5",
+    "element-ui": "^2.12.0",
+    "jquery": "^3.4.1",
+    "mint-ui": "^2.2.13",
+    "vue": "^2.5.2",
+    "vue-axios": "^2.1.4",
+    "vue-router": "^3.0.1"
    
     
